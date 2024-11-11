@@ -354,6 +354,194 @@ ul {
   /* background-color: rgba(255, 0, 0, 0.465); */
 }
 
+
+/* .homeContent h4 span::after {
+  content: "";
+  animation: typing infinite 7s;
+  animation: typing 5s steps(30) infinite;
+  text-transform: capitalize;
+} */
+
+.homeContent h4 span::after {
+  content: "";
+  animation: typing 5s steps(30) infinite;
+  display: inline-block;
+}
+
+.homeContent h4::after {
+  content: "|";
+  /* Cursor character */
+  animation: blink 0.5s steps(1) infinite;
+  display: inline-block;
+  font-family: "YourFontName";
+  /* Replace with your font */
+}
+
+/* Typing animation */
+@keyframes typing {
+
+  0%,
+  35% {
+    content: "";
+  }
+
+  /* Typing "Developer" */
+  36% {
+    content: "D";
+  }
+
+  37% {
+    content: "De";
+  }
+
+  38% {
+    content: "Dev";
+  }
+
+  39% {
+    content: "Deve";
+  }
+
+  40% {
+    content: "Devel";
+  }
+
+  41% {
+    content: "Develo";
+  }
+
+  42% {
+    content: "Develop";
+  }
+
+  43% {
+    content: "Develope";
+  }
+
+  44% {
+    content: "Developer";
+  }
+
+  54% {
+    content: "Developer";
+  }
+
+  55% {
+    content: "Develope";
+  }
+
+  56% {
+    content: "Develop";
+  }
+
+  57% {
+    content: "Develo";
+  }
+
+  58% {
+    content: "Devel";
+  }
+
+  59% {
+    content: "Deve";
+  }
+
+  60% {
+    content: "Dev";
+  }
+
+  61% {
+    content: "De";
+  }
+
+  62% {
+    content: "D";
+  }
+
+  /* Typing "Designer" */
+  64% {
+    content: "D";
+  }
+
+  65% {
+    content: "De";
+  }
+
+  66% {
+    content: "Des";
+  }
+
+  67% {
+    content: "Desi";
+  }
+
+  68% {
+    content: "Desig";
+  }
+
+  69% {
+    content: "Design";
+  }
+
+  70% {
+    content: "Designe";
+  }
+
+  71% {
+    content: "Designer";
+  }
+
+  80% {
+    content: "Designer";
+  }
+
+  81% {
+    content: "Designe";
+  }
+
+  82% {
+    content: "Design";
+  }
+
+  83% {
+    content: "Desig";
+  }
+
+  84% {
+    content: "Desi";
+  }
+
+  85% {
+    content: "Des";
+  }
+
+  86% {
+    content: "De";
+  }
+
+  87% {
+    content: "D";
+  }
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
 /* &-----------------------------------End Home section-----------------------------------*/
 
 /* '---------------------------------Start About section--------------------------------*/
