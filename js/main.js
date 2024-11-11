@@ -1,4 +1,3 @@
-
 //> 1-  with Bure JS
 // var prevScrollpos = window.pageYOffset;
 //window.onscroll = function () {
@@ -14,15 +13,12 @@
 //             document.querySelector(".navBar").style.boxShadow = "none"
 //         }
 
-
 //     } else {
 //         document.querySelector(".navBar").style.top = "-60px";
 //         console.log("up", currentScrollPos);
 //     }
 //     prevScrollpos = currentScrollPos;
 // }
-
-
 
 //> 2- My Way with Bure JS
 // window.addEventListener("scroll", function (e) {
@@ -53,25 +49,28 @@
 
 //& another way to hide navBar Whene scroll Down After a frist setion
 $(window).scroll(function () {
-    if ($(window).scrollTop() === 0) {
-        $(".navBar").slideDown(500)
-        $(".navBar").css("backgroundColor", "transparent")
-    }
-    else if ($(window).scrollTop() > 0 && $(window).scrollTop() < window.innerHeight - $(".navBar").outerHeight()) {
-        $(".navBar").slideUp(500)
-        $(".navBar").css("backgroundColor", "transparent")
-    }
-    else if ($(window).scrollTop() > window.innerHeight - $(".navBar").outerHeight() * 2 && $(window).scrollTop() < window.innerHeight) {
-        $(".navBar").fadeOut(600)
-        $(".navBar").css("backgroundColor", "#333333")
-        // console.log(window.innerHeight - $(".navBar").outerHeight());
-
-    }
-    else if ($(window).scrollTop() >= window.innerHeight) {
-        $(".navBar").slideDown(500)
-        $(".navBar").css("backgroundColor", "#333333")
-    }
-})
+  if ($(window).scrollTop() === 0) {
+    $(".navBar").slideDown(500);
+    $(".navBar").css("backgroundColor", "transparent");
+  } else if (
+    $(window).scrollTop() > 0 &&
+    $(window).scrollTop() < window.innerHeight - $(".navBar").outerHeight()
+  ) {
+    $(".navBar").slideUp(500);
+    $(".navBar").css("backgroundColor", "transparent");
+  } else if (
+    $(window).scrollTop() >
+      window.innerHeight - $(".navBar").outerHeight() * 2 &&
+    $(window).scrollTop() < window.innerHeight
+  ) {
+    $(".navBar").fadeOut(600);
+    $(".navBar").css("backgroundColor", "#333333");
+    // console.log(window.innerHeight - $(".navBar").outerHeight());
+  } else if ($(window).scrollTop() >= window.innerHeight) {
+    $(".navBar").slideDown(500);
+    $(".navBar").css("backgroundColor", "#333333");
+  }
+});
 
 //& Hide Nave Bar in A certain Section In page using{Offset()}
 // $(window).scroll(function () {
@@ -87,28 +86,24 @@ $(window).scroll(function () {
 //     }
 // })
 
-
 //& Hide arrow-up Whene scroll Down After a frist setion
 $(window).scroll(function () {
-    if ($(window).scrollTop() < window.innerHeight) {
-        $(".arrow-up").hide(500)
-    } else {
-        $(".arrow-up").show(500)
-    }
-})
+  if ($(window).scrollTop() < window.innerHeight) {
+    $(".arrow-up").hide(500);
+  } else {
+    $(".arrow-up").show(500);
+  }
+});
 
 $(".arrow-up").click(function () {
-    $('html , body').animate({ scrollTop: 0 }, 2000)
-})
-
+  $("html , body").animate({ scrollTop: 0 }, 2000);
+});
 
 //& P17 Animating to top with specific time  // a[href^='#'] it is mean "any anchor must start with #"
 $(".navList a[href^='#']").click(function () {
-    const selectedHref = $(this).attr("href")
-    $('html , body').animate({ scrollTop: $(selectedHref).offset().top }, 1500)
-})
-
-
+  const selectedHref = $(this).attr("href");
+  $("html , body").animate({ scrollTop: $(selectedHref).offset().top }, 1500);
+});
 
 //& Loading Screen
 
@@ -122,48 +117,39 @@ $(".navList a[href^='#']").click(function () {
 //> with Jquery
 
 $(document).ready(function () {
-    $(".loadingScreen").fadeOut(500, function () {
-        $("body").css("overflow", "visible");
-    })
-})
+  $(".loadingScreen").fadeOut(500, function () {
+    $("body").css("overflow", "visible");
+  });
+});
 
-
-
-
-$(".parentColorBox span").eq(0).css("backgroundColor", "#ff305b")
-$(".parentColorBox span").eq(1).css("backgroundColor", "rgb(0,0,200)")
-$(".parentColorBox span").eq(2).css("backgroundColor", "rgb(0,155,0)")
-$(".parentColorBox span").eq(3).css("backgroundColor", "rgb(55,0,0)")
+$(".parentColorBox span").eq(0).css("backgroundColor", "#ff305b");
+$(".parentColorBox span").eq(1).css("backgroundColor", "rgb(0,0,200)");
+$(".parentColorBox span").eq(2).css("backgroundColor", "rgb(0,155,0)");
+$(".parentColorBox span").eq(3).css("backgroundColor", "rgb(55,0,0)");
 
 $(".parentColorBox span").click(function () {
-    const selectedColor = $(this).css("backgroundColor")
-    $(".colorChanged").css("color", selectedColor)
-    $(".bgChanged").css("backgroundColor", selectedColor)
-})
-const parentColorBoxWidth = $(".parentColorBox").outerWidth()
-
+  const selectedColor = $(this).css("backgroundColor");
+  $(".colorChanged").css("color", selectedColor);
+  $(".bgChanged").css("backgroundColor", selectedColor);
+});
+const parentColorBoxWidth = $(".parentColorBox").outerWidth();
 
 $(".boxSettigns").click(function () {
-    console.log(parentColorBoxWidth);
-    if ($(".parentColorBox").css("left") == "0px") {
-        // $(".parentColorBox").css("left", -parentColorBoxWidth)
-        $(".parentColorBox").animate({ left: -parentColorBoxWidth }, 700)
-        $(".boxSettigns .angles").removeClass("fa-angles-left")
-        $(".boxSettigns .angles").addClass("fa-angles-right")
-        $(".boxSettigns .angles").css("color", "#fff")
-
-    } else {
-        $(".parentColorBox").animate({ left: 0 }, 700)
-        $(".boxSettigns .angles").removeClass("fa-angles-right")
-        $(".boxSettigns .angles").addClass("fa-angles-left")
-        $(".boxSettigns .angles").css("color", "#ff305b")
-        $(".boxSettigns .angles").css("transition", "all 5s")
-    }
-})
-
-
-
-
+  console.log(parentColorBoxWidth);
+  if ($(".parentColorBox").css("left") == "0px") {
+    // $(".parentColorBox").css("left", -parentColorBoxWidth)
+    $(".parentColorBox").animate({ left: -parentColorBoxWidth }, 700);
+    $(".boxSettigns .angles").removeClass("fa-angles-left");
+    $(".boxSettigns .angles").addClass("fa-angles-right");
+    $(".boxSettigns .angles").css("color", "#fff");
+  } else {
+    $(".parentColorBox").animate({ left: 0 }, 700);
+    $(".boxSettigns .angles").removeClass("fa-angles-right");
+    $(".boxSettigns .angles").addClass("fa-angles-left");
+    $(".boxSettigns .angles").css("color", "#ff305b");
+    $(".boxSettigns .angles").css("transition", "all 5s");
+  }
+});
 
 // function sayHello({ name = 'abdo', age = 50 }) {
 //     console.log(`Hello, my name is ${name} and I am ${age} years old.`);
@@ -175,9 +161,19 @@ $(".boxSettigns").click(function () {
 // sayHello({ age: 30 }); // Output: Hello, my name is abdo and I am 30 years old.
 // sayHello({ name: 'Bob', age: 25 }); // Output: Hello, my name is Bob and I am 25 years old.
 
-
-function hello({empName = "abdo" , age = 25}) {
-    console.log("hello ", empName, " yout are ", age, " years old");
+function hello({ empName = "abdo", age = 25 }) {
+  console.log("hello ", empName, " yout are ", age, " years old");
 }
 
-hello({empName :"asc"})
+hello({ empName: "asc" });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll(".navList ul li a");
+
+  links.forEach((link) => {
+    link.addEventListener("click", function () {
+      links.forEach((link) => link.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+});
